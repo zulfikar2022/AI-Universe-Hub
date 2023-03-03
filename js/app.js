@@ -61,7 +61,7 @@ const detailsModal = (id) => {
             // pricing calculation
             {
                 const pricing = data.data.pricing;
-                console.log(pricing);
+              
                 if(pricing.length === 0){
                     monthBasis.innerText = `Free of cost/Basis`;
                     monthPro.innerText = `Free of cost/Pro`;
@@ -117,7 +117,6 @@ const detailsModal = (id) => {
             const productImage = document.getElementById('product-image');
             //image management 
             {
-                console.log(data.data['image_link'][0]);
                 document.getElementById('product-image').innerHTML = ' ';
                 if(data.data['image_link'][0].length>0){
                     const image = document.createElement('img');
@@ -128,6 +127,25 @@ const detailsModal = (id) => {
             }
             const productQuestion = document.getElementById('product-question');
             const productAnswer = document.getElementById('product-answer');
+
+            productQuestion.classList.add('text-center');
+            productAnswer.classList.add('text-center');
+            productQuestion.classList.add('mt-5');
+            productAnswer.classList.add('p-3');
+            productQuestion.classList.add('p-3');
+
+            {
+                const inputOutput  = data.data['input_output_examples'];
+                console.log(inputOutput);
+                if(inputOutput.length===0){
+                    productQuestion.innerText = "Data not found";
+                    productAnswer.innerText = "Data not found";
+                }
+                else{
+                    productQuestion.innerText =`${inputOutput[0]['input']}`;
+                    productAnswer.innerText = `${inputOutput[0]['output']}`;
+                }
+            }
 
         })
 
