@@ -1,3 +1,25 @@
-.image-style{
-    width: ;
+
+.dataDiv-style{
+    
+    width: 98%;
+}
+#data-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: auto;
+    row-gap: 10px;
+}
+
+
+
+
+@media screen and (max-width:576px) {
+   
+    #data-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: auto;
+        row-gap: 10px;
+    }
+    
 }
