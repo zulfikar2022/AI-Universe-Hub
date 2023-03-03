@@ -53,7 +53,7 @@ const detailsModal = (id) => {
 
 
             const productDescription = document.getElementById('product-description');
-            productDescription.innerText=`${data.data.description}`;
+            productDescription.innerText = `${data.data.description}`;
 
             const monthBasis = document.getElementById('month-basis');
             const monthPro = document.getElementById('month-pro');
@@ -61,15 +61,15 @@ const detailsModal = (id) => {
             // pricing calculation
             {
                 const pricing = data.data.pricing;
-              
-                if(pricing.length === 0){
+
+                if (pricing.length === 0) {
                     monthBasis.innerText = `Free of cost/Basis`;
                     monthPro.innerText = `Free of cost/Pro`;
-                    enterprise.innerText =  `Free of const/Enterprise`;
+                    enterprise.innerText = `Free of const/Enterprise`;
                 }
                 else {
                     monthBasis.innerText = `${pricing[0].price} ${pricing[0].plan}`;
-                    monthPro.innerText =  `${pricing[1].price} ${pricing[1].plan}`;
+                    monthPro.innerText = `${pricing[1].price} ${pricing[1].plan}`;
                     enterprise.innerText = `${pricing[2].price}/ ${pricing[2].plan}`;
                 }
             }
@@ -100,15 +100,15 @@ const detailsModal = (id) => {
             {
                 const integrations = data.data.integrations;
                 document.getElementById('integrations').innerText = ' ';
-                if (integrations.length === 0){
+                if (integrations.length === 0) {
                     const li = document.createElement('li');
-                    li.innerText= 'No data found';
+                    li.innerText = 'No data found';
                     document.getElementById('integrations').innerHTML = li;
-                } 
+                }
                 else {
-                    for(let i = 0; i<integrations.length;i++){
+                    for (let i = 0; i < integrations.length; i++) {
                         const li = document.createElement('li');
-                        li.innerText= `${integrations[i]}`;
+                        li.innerText = `${integrations[i]}`;
                         document.getElementById('integrations').appendChild(li);
                     }
                 }
@@ -118,7 +118,7 @@ const detailsModal = (id) => {
             //image management 
             {
                 document.getElementById('product-image').innerHTML = ' ';
-                if(data.data['image_link'][0].length>0){
+                if (data.data['image_link'][0].length > 0) {
                     const image = document.getElementById('product-image');
                     image.classList.add('img-fluid');
                     image.src = data.data['image_link'][0];
@@ -134,14 +134,14 @@ const detailsModal = (id) => {
             productQuestion.classList.add('p-3');
 
             {
-                const inputOutput  = data.data['input_output_examples'];
+                const inputOutput = data.data['input_output_examples'];
                 console.log(inputOutput);
-                if(inputOutput.length===0){
+                if (inputOutput.length === 0) {
                     productQuestion.innerText = "Data not found";
                     productAnswer.innerText = "Data not found";
                 }
-                else{
-                    productQuestion.innerText =`${inputOutput[0]['input']}`;
+                else {
+                    productQuestion.innerText = `${inputOutput[0]['input']}`;
                     productAnswer.innerText = `${inputOutput[0]['output']}`;
                 }
             }
@@ -150,7 +150,19 @@ const detailsModal = (id) => {
 
 }
 
+let showMoreCounter = 0;
+const showAll = () => {
+    console.log('button clicked');
 
+    fetch('https://openapi.programming-hero.com/api/ai/tools')
+        .then(res => res.json())
+        .then(data => showData(data.data.tools, 12))
+
+    showMoreCounter++;
+    if(showMoreCounter!=0){
+        document.getElementById('btn-show-more').classList.add('d-none');
+    }
+}
 
 
 
