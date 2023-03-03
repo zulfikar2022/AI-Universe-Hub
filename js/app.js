@@ -119,10 +119,9 @@ const detailsModal = (id) => {
             {
                 document.getElementById('product-image').innerHTML = ' ';
                 if(data.data['image_link'][0].length>0){
-                    const image = document.createElement('img');
+                    const image = document.getElementById('product-image');
+                    image.classList.add('img-fluid');
                     image.src = data.data['image_link'][0];
-                    image.classList.add('img-manage');
-                    document.getElementById('product-image').appendChild(image);
                 }
             }
             const productQuestion = document.getElementById('product-question');

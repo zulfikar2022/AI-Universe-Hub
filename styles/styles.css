@@ -72,8 +72,7 @@
     flex-direction: column;
 }
 
-.img-manage{
-    width: 100%;
+#product-image{
     margin-left: 10px;
 }
 
@@ -92,5 +91,22 @@
         column-gap: auto;
         row-gap: 10px;
     }
+
+    .modal-body{
+        width: 100%;
+    }
+    #outer-most-container{
+        display: flex;
+        flex-direction: column;
+    }
+    #product-details{
+        padding: 5px;
+        width: 98%;
+       
+    }
+    #product-image{
+        margin-top: 10px;
+    }
+
     
 }
