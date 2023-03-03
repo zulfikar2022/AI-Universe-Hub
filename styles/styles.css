@@ -9,6 +9,76 @@
     column-gap: auto;
     row-gap: 10px;
 }
+.image-height{
+    height: 50%;
+}
+
+
+
+
+        /* ---------------------------------------------------
+            STYLES FOR MODAL 
+   
+            ---------------------------------------------------*/
+.modal-dialog{
+    display: flex;
+    justify-content: center;
+   }         
+.modal-body{
+    width: 1000px;
+}
+.modal-content{
+    width: 1000px;
+
+}
+#outer-most-container{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+#product-details{
+    display: flex;
+    flex-direction: column;
+    background-color:#edddddad ;
+    border: 1px solid rgb(226, 106, 106);
+}
+
+#product-pricing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.pricing{
+    width: 25%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+#features-and-integrations{
+    display: flex;
+    flex-direction: row;
+}
+
+#product-sample{
+    display: flex;
+    flex-direction: column;
+}
+
+.img-manage{
+    width: 100%;
+    margin-left: 10px;
+}
+
+
+
+
 
 
 
