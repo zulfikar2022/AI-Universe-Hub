@@ -11,6 +11,7 @@ const loadData = () => {
 
 
 const showData = (fullDataArray, num) => {
+    spinnerShow(true);
     const dataArray = fullDataArray.slice(0, num);
     const dataContainer = document.getElementById('data-container');
     dataContainer.innerHTML = '';
@@ -41,6 +42,7 @@ const showData = (fullDataArray, num) => {
 
         dataContainer.appendChild(dataDiv);
     })
+    spinnerShow(false);
 }
 
 
@@ -165,6 +167,14 @@ const showAll = () => {
 }
 
 
+const spinnerShow = (boolValue) => {
+    if(boolValue===true){
+        document.getElementById('my-spinner').classList.remove('d-none');
+    }
+    else{
+        document.getElementById('my-spinner').classList.add('d-none');
+    }
+} 
 
 
 

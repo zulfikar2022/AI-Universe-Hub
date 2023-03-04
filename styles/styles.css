@@ -77,6 +77,16 @@
 }
 
 
+/* spinner style */
+
+#my-spinner{
+
+}
+
+#my-spinner-container{
+    display: flex;
+    justify-content: center;
+}
 
 
 
